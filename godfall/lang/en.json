@@ -1,4 +1,3 @@
-// godfall/lang/en.json
 {
   "GODFALL.Strength": "Strength",
   "GODFALL.Dexterity": "Dexterity",
@@ -16,10 +15,8 @@
   "GODFALL.Spells": "Spells",
   "GODFALL.Talents": "Talents",
   "GODFALL.Backgrounds": "Backgrounds",
-
   "GODFALL.SheetLabels.Character": "Character Sheet",
   "GODFALL.SheetLabels.Item": "Item Sheet",
-
   "GODFALL.TypeLabels.Character": "Character",
   "GODFALL.TypeLabels.CharacterPlural": "Characters",
   "GODFALL.TypeLabels.Item": "Item",

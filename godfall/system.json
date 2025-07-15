@@ -1,10 +1,9 @@
-// godfall/system.json
 {
   "id": "godfall",
   "title": "Godfall RPG",
   "description": "A custom system for the Godfall RPG, compatible with Foundry VTT v12 and v13.",
   "version": "1.4.1",
-  "author": "You & Gemini",
+  "author": "You & Claude",
   "compatibility": {
     "minimum": "12",
     "verified": "13.346"
