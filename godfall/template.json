@@ -1,0 +1,96 @@
+// godfall/template.json
+{
+  "Actor": {
+    "types": [
+      "character"
+    ],
+    "character": {
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "wp": {
+        "value": 5,
+        "max": 5
+      },
+      "dv": {
+        "value": 10
+      },
+      "attributes": {
+        "str": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Strength"
+        },
+        "dex": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Dexterity"
+        },
+        "con": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Constitution"
+        },
+        "int": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Intelligence"
+        },
+        "wis": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Wisdom"
+        },
+        "cha": {
+          "value": 10,
+          "mod": 0,
+          "label": "GODFALL.Charisma"
+        }
+      },
+      "backgrounds": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "item",
+      "weapon",
+      "armor",
+      "shield",
+      "talent",
+      "spell"
+    ],
+    "item": {
+      "description": "",
+      "cost": 0
+    },
+    "weapon": {
+      "description": "",
+      "cost": 0,
+      "damage": "",
+      "hp": 0,
+      "properties": ""
+    },
+    "armor": {
+      "description": "",
+      "cost": 0,
+      "dr": 0,
+      "evasionPenalty": 0,
+      "hp": 0
+    },
+    "shield": {
+      "description": "",
+      "cost": 0,
+      "hardness": 0,
+      "hp": 0
+    },
+    "talent": {
+      "description": ""
+    },
+    "spell": {
+      "description": "",
+      "cost": 0,
+      "tradition": ""
+    }
+  }
+}
