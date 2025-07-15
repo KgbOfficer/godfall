@@ -47,7 +47,8 @@
           "label": "GODFALL.Charisma"
         }
       },
-      "backgrounds": ""
+      "custom_weapon_skills": {},
+      "custom_backgrounds": {}
     }
   },
   "Item": {
@@ -61,27 +62,44 @@
     ],
     "item": {
       "description": "",
-      "cost": 0
+      "cost": 0,
+      "quantity": 1,
+      "weight": 0,
+      "equipped": false
     },
     "weapon": {
       "description": "",
       "cost": 0,
       "damage": "",
       "hp": 0,
-      "properties": ""
+      "properties": "",
+      "weapon_type": "light_blades",
+      "attribute": "str",
+      "equipped": false,
+      "versatile": false,
+      "versatile_damage": "",
+      "two_handed": false,
+      "quantity": 1,
+      "weight": 0
     },
     "armor": {
       "description": "",
       "cost": 0,
       "dr": 0,
       "evasionPenalty": 0,
-      "hp": 0
+      "hp": 0,
+      "equipped": false,
+      "quantity": 1,
+      "weight": 0
     },
     "shield": {
       "description": "",
       "cost": 0,
       "hardness": 0,
-      "hp": 0
+      "hp": 0,
+      "equipped": false,
+      "quantity": 1,
+      "weight": 0
     },
     "talent": {
       "description": ""

@@ -29,18 +29,31 @@ Hooks.once("init", () => {
     spell: "GODFALL.TypeLabels.Spell"
   };
 
+  // Register Handlebars helpers
+  Handlebars.registerHelper('replace', function(str, search, replace) {
+    if (typeof str !== 'string') return str;
+    return str.replace(new RegExp(search, 'g'), replace);
+  });
+
+  Handlebars.registerHelper('titleCase', function(str) {
+    if (typeof str !== 'string') return str;
+    return str.replace(/\w\S*/g, function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  });
+
   // Register sheet application classes.
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("godfall", GodfallActorSheet, {
     makeDefault: true,
-    label: "Godfall.SheetLabels.Character",
+    label: "GODFALL.SheetLabels.Character",
     types: ["character"]
   });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("godfall", GodfallItemSheet, {
     makeDefault: true,
-    label: "Godfall.SheetLabels.Item",
+    label: "GODFALL.SheetLabels.Item",
     types: ["item", "weapon", "armor", "shield", "talent", "spell"]
   });
 });

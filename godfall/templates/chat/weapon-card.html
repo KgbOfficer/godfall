@@ -1,0 +1,29 @@
+<!-- templates/chat/weapon-card.html -->
+<div class="godfall chat-card weapon-card" data-item-id="{{item.id}}">
+    <header class="card-header flexrow">
+        <img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
+        <h3 class="item-name">{{item.name}}</h3>
+    </header>
+
+    <div class="card-content">
+        {{#if system.description}}
+            {{{system.description}}}
+        {{else}}
+            <p>A {{item.type}} weapon.</p>
+        {{/if}}
+        
+        {{#if damageRoll}}
+            <div class="damage-roll">
+                <h4>Damage: {{damageRoll.total}}</h4>
+                <p class="dice-formula">{{damageRoll.formula}}</p>
+            </div>
+        {{/if}}
+    </div>
+
+    <footer class="card-footer">
+        {{#if system.damage}}<span><strong>Damage:</strong> {{system.damage}}</span>{{/if}}
+        {{#if system.properties}}<span><strong>Properties:</strong> {{system.properties}}</span>{{/if}}
+        {{#if system.cost}}<span><strong>Cost:</strong> {{system.cost}}</span>{{/if}}
+        {{#if system.hp}}<span><strong>HP:</strong> {{system.hp}}</span>{{/if}}
+    </footer>
+</div>
