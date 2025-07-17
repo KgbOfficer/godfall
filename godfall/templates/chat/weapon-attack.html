@@ -1,0 +1,35 @@
+<div class="godfall chat-card weapon-attack" data-item-id="{{item.id}}">
+    <header class="card-header flexrow">
+        <img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
+        <h3 class="item-name">{{item.name}} Attack</h3>
+    </header>
+
+    <div class="card-content">
+        <div class="attack-roll">
+            <h4>Attack Roll: {{attackRoll.total}}</h4>
+            <p class="roll-breakdown">
+                1d20 + {{attributeName}} ({{#if (gt attributeMod 0)}}+{{attributeMod}}{{else}}{{attributeMod}}{{/if}}) + 
+                Weapon Skill ({{#if (gt weaponSkillBonus 0)}}+{{weaponSkillBonus}}{{else}}{{weaponSkillBonus}}{{/if}}) = 
+                {{#if (gt attackBonus 0)}}+{{attackBonus}}{{else}}{{attackBonus}}{{/if}}
+            </p>
+        </div>
+        
+        {{#if damageRoll}}
+        <div class="damage-roll">
+            <h4>Damage: {{damageRoll.total}}</h4>
+            <p class="roll-formula">{{damageRoll.formula}}</p>
+        </div>
+        {{/if}}
+    </div>
+
+    <footer class="card-footer">
+        <span><strong>Tradition:</strong> {{titleCase item.system.tradition}}</span>
+        {{#if (eq item.system.rank 0)}}
+        <span><strong>Rank:</strong> Cantrip</span>
+        {{else}}
+        <span><strong>Rank:</strong> {{item.system.rank}}</span>
+        {{/if}}
+        {{#if item.system.duration}}<span><strong>Duration:</strong> {{item.system.duration}}</span>{{/if}}
+        {{#if item.system.concentration}}<span><strong>Concentration:</strong> Yes</span>{{/if}}
+    </footer>
+</div>

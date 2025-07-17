@@ -1,0 +1,27 @@
+<!-- templates/item/item-spell-sheet.html -->
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Spell Name"/></h1>
+    </div>
+  </header>
+  
+  <div class="sheet-body">
+    <div class="item-details">
+      <div class="form-group">
+        <label>WP Cost</label>
+        <input type="text" name="system.cost" value="{{system.cost}}" data-dtype="Number"/>
+      </div>
+      <div class="form-group">
+        <label>Tradition</label>
+        <input type="text" name="system.tradition" value="{{system.tradition}}"/>
+      </div>
+    </div>
+    
+    <div class="item-description">
+      <h3>Description</h3>
+      <textarea name="system.description" rows="10">{{system.description}}</textarea>
+    </div>
+  </div>
+</form>

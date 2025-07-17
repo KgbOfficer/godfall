@@ -1,0 +1,16 @@
+<!-- templates/item/item-talent-sheet.html -->
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Talent Name"/></h1>
+    </div>
+  </header>
+  
+  <div class="sheet-body">
+    <div class="item-description">
+      <h3>Description</h3>
+      <textarea name="system.description" rows="12">{{system.description}}</textarea>
+    </div>
+  </div>
+</form>

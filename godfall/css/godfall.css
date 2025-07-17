@@ -1,0 +1,752 @@
+/* godfall/css/godfall.css */
+/* Import thematic fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+/* Main sheet container */
+.godfall.sheet.actor, .godfall.sheet.item {
+  font-family: 'Cinzel', serif;
+  background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+  background-color: #f1e9d6;
+  color: #4b3d2a;
+}
+
+/* Header section styling */
+.godfall .sheet-header {
+  border-bottom: 2px solid #8a7a5b;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.godfall .profile-img {
+  flex: 0 0 120px;
+  height: 120px;
+  border: 3px solid #8a7a5b;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.godfall .header-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.godfall .charname input {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #3d2e1a;
+  border: none;
+  border-bottom: 2px solid #c9bba5;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Character Details */
+.godfall .character-details {
+  margin-bottom: 15px;
+}
+
+.godfall .detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.godfall .detail-field label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #8a7a5b;
+}
+
+.godfall .detail-field input,
+.godfall .detail-field select {
+  padding: 4px 6px;
+  border: 1px solid #c9bba5;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+/* Resource bars (HP, WP, DV) */
+.godfall .resources {
+  margin-bottom: 15px;
+}
+
+.godfall .resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #c9bba5;
+  border-radius: 5px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.godfall .resource-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: #8a7a5b;
+}
+
+.godfall .resource-values {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.godfall .resource input {
+  border: 1px solid #c9bba5;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  width: 50px;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Action Buttons */
+.godfall .action-buttons {
+  gap: 10px;
+  justify-content: center;
+}
+
+.godfall .action-buttons button {
+  background: #8a7a5b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.godfall .action-buttons button:hover {
+  background: #a52a2a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Tabs styling */
+.godfall .sheet-tabs {
+  border-bottom: 2px solid #8a7a5b;
+  margin-bottom: 10px;
+}
+
+.godfall .sheet-tabs .item {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  padding: 8px 15px;
+  background: #e6dac6;
+  border: 1px solid #c9bba5;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+}
+
+.godfall .sheet-tabs .item.active {
+  background: #f1e9d6;
+  text-shadow: none;
+  border-bottom: 1px solid #f1e9d6;
+}
+
+/* Body content styling */
+.godfall .sheet-body {
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+}
+
+/* Main Tab Sections */
+.godfall .attributes-section,
+.godfall .skills-section,
+.godfall .backgrounds-section,
+.godfall .encumbrance-section,
+.godfall .coins-section {
+  margin-bottom: 20px;
+  background: rgba(230, 218, 198, 0.3);
+  border: 2px solid #8a7a5b;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.godfall .attributes-section h3,
+.godfall .skills-section h3,
+.godfall .backgrounds-section h3,
+.godfall .encumbrance-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3d2e1a;
+  border-bottom: 2px solid #8a7a5b;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Attributes Grid */
+.godfall .attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.godfall .attribute-block {
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border: 2px solid #c9bba5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.godfall .attribute-block:hover {
+  border-color: #a52a2a;
+  box-shadow: 0 2px 8px rgba(165, 42, 42, 0.3);
+  transform: translateY(-2px);
+}
+
+.godfall .attribute-name {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #3d2e1a;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.godfall .attribute-block input {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #c9bba5;
+  border-radius: 4px;
+  background: #f8f8f8;
+  margin-bottom: 8px;
+  padding: 4px;
+}
+
+.godfall .attribute-mod {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8a7a5b;
+}
+
+/* Weapon Skills Grid */
+.godfall .weapon-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.godfall .skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: white;
+  border: 1px solid #c9bba5;
+  border-radius: 5px;
+}
+
+.godfall .skill-item label {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.godfall .skill-item input {
+  width: 60px;
+  text-align: center;
+  padding: 4px;
+  border: 1px solid #c9bba5;
+  border-radius: 3px;
+}
+
+/* Backgrounds */
+.godfall .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.godfall .add-background {
+  background: #8a7a5b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.godfall .add-background:hover {
+  background: #a52a2a;
+}
+
+.godfall .backgrounds-list {
+  display: grid;
+  gap: 8px;
+}
+
+.godfall .background-item {
+  align-items: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid #c9bba5;
+  border-radius: 5px;
+}
+
+.godfall .background-name {
+  flex: 1;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.godfall .background-name:hover {
+  color: #a52a2a;
+  text-shadow: 0 0 2px #a52a2a;
+}
+
+.godfall .background-value {
+  font-weight: bold;
+  color: #8a7a5b;
+  margin-right: 10px;
+}
+
+.godfall .delete-background {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.godfall .delete-background:hover {
+  background: #c0392b;
+}
+
+/* Encumbrance Bar */
+.godfall .encumbrance-bar {
+  position: relative;
+  height: 30px;
+  background: #ddd;
+  border: 2px solid #8a7a5b;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.godfall .encumbrance-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.godfall .encumbrance-fill.light {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.godfall .encumbrance-fill.medium {
+  background: linear-gradient(to right, #f39c12, #e67e22);
+}
+
+.godfall .encumbrance-fill.heavy {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+}
+
+.godfall .encumbrance-fill.overloaded {
+  background: linear-gradient(to right, #8e44ad, #9b59b6);
+}
+
+.godfall .encumbrance-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  font-size: 12px;
+}
+
+/* Coins Section */
+.godfall .coins-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.godfall .coins-section label {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.godfall .coins-section input {
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  padding: 6px;
+  border: 1px solid #c9bba5;
+  border-radius: 4px;
+}
+
+/* Import Sections */
+.godfall .import-section {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.godfall .import-items {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.godfall .import-items:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Item lists */
+.godfall .items-list {
+  margin-bottom: 20px;
+  background: white;
+  border: 2px solid #8a7a5b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.godfall .item-list-header {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #8a7a5b;
+  padding: 10px;
+  align-items: center;
+}
+
+.godfall .item-list-header .item-controls a {
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.godfall .item-list-header .item-controls a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.godfall .items-list .item {
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #dcd1ba;
+  transition: background-color 0.2s ease;
+}
+
+.godfall .items-list .item:nth-child(even) {
+  background: rgba(230, 218, 198, 0.3);
+}
+
+.godfall .items-list .item:last-child {
+  border-bottom: none;
+}
+
+.godfall .items-list .item:hover {
+  background: rgba(230, 218, 198, 0.5);
+}
+
+/* Item Images with Damage Indicators */
+.godfall .item-image {
+  position: relative;
+  flex: 0 0 24px;
+  margin-right: 10px;
+}
+
+.godfall .damage-indicator {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.godfall .damage-indicator.pristine {
+  background: #27ae60;
+}
+
+.godfall .damage-indicator.worn {
+  background: #f39c12;
+}
+
+.godfall .damage-indicator.damaged {
+  background: #e67e22;
+}
+
+.godfall .damage-indicator.badly-damaged {
+  background: #e74c3c;
+}
+
+.godfall .damage-indicator.broken {
+  background: #8e44ad;
+}
+
+.godfall .item-name {
+  flex: 1;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.godfall .item-name.item-roll,
+.godfall .item-name.item-chat {
+  cursor: pointer;
+}
+
+.godfall .item-name.item-roll:hover,
+.godfall .item-name.item-chat:hover {
+  color: #a52a2a;
+  text-shadow: 0 0 2px #a52a2a;
+}
+
+/* Item stats columns */
+.godfall .item-damage,
+.godfall .item-stats,
+.godfall .item-rank,
+.godfall .item-tradition,
+.godfall .item-cost,
+.godfall .item-type,
+.godfall .item-quantity,
+.godfall .item-weight {
+  flex: 0 0 80px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.godfall .item-properties {
+  flex: 0 0 120px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.godfall .item-equipped {
+  flex: 0 0 60px;
+  text-align: center;
+}
+
+.godfall .equipped-toggle {
+  cursor: pointer;
+}
+
+.godfall .item-controls {
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.godfall .item-controls a {
+  color: #8a7a5b;
+  margin: 0 3px;
+  padding: 4px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.godfall .item-controls a:hover {
+  color: white;
+  background: #a52a2a;
+}
+
+.godfall .repair-item {
+  color: #27ae60 !important;
+}
+
+.godfall .repair-item:hover {
+  background: #27ae60 !important;
+}
+
+/* Chat Card Styling */
+.godfall.chat-card {
+  font-family: 'Lato', sans-serif;
+  background: #f1e9d6 url('https://www.transparenttextures.com/patterns/old-paper.png');
+  border: 2px solid #8a7a5b;
+  border-radius: 8px;
+  padding: 10px;
+  color: #4b3d2a;
+  margin: 5px 0;
+}
+
+.godfall.chat-card .card-header {
+  border-bottom: 2px solid #8a7a5b;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.godfall.chat-card .card-header h3 {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.godfall.chat-card .card-content {
+  font-size: 14px;
+  padding: 5px 0;
+  line-height: 1.4;
+}
+
+.godfall.chat-card .attack-roll,
+.godfall.chat-card .damage-roll {
+  background: rgba(230, 218, 198, 0.5);
+  padding: 8px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.godfall.chat-card .attack-roll h4,
+.godfall.chat-card .damage-roll h4 {
+  margin: 0 0 4px 0;
+  font-family: 'Cinzel', serif;
+  color: #3d2e1a;
+}
+
+.godfall.chat-card .roll-breakdown,
+.godfall.chat-card .roll-formula {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+.godfall.chat-card .card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 15px;
+  border-top: 2px solid #8a7a5b;
+  padding-top: 8px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.godfall.chat-card .card-footer span {
+  color: #666;
+}
+
+/* Item Sheet Styling */
+.godfall.sheet.item .sheet-body {
+  padding: 15px;
+}
+
+.godfall.sheet.item .item-details {
+  margin-bottom: 20px;
+}
+
+.godfall.sheet.item .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.godfall.sheet.item .form-group label {
+  flex: 1;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.godfall.sheet.item .form-group input,
+.godfall.sheet.item .form-group select,
+.godfall.sheet.item .item-description textarea {
+  flex: 2;
+  border: 1px solid #c9bba5;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px;
+  font-family: 'Lato', sans-serif;
+}
+
+.godfall.sheet.item .item-description {
+  padding-top: 15px;
+}
+
+.godfall.sheet.item .item-description textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.godfall.sheet.item .item-description h3 {
+  font-family: 'Cinzel', serif;
+  border-bottom: 2px solid #8a7a5b;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .godfall .attributes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .godfall .weapon-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .godfall .character-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .godfall .resources {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .godfall .attributes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .godfall .weapon-skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .godfall .character-details,
+  .godfall .resources {
+    grid-template-columns: 1fr;
+  }
+}
