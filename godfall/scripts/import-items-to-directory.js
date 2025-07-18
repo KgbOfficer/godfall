@@ -1,0 +1,135 @@
+// godfall/scripts/import-items-to-directory.js
+/**
+ * Script to import all Godfall items directly to the Items directory
+ * Run this in the browser console after loading the Godfall system
+ */
+
+const godfallItems = {
+  weapons: [
+    {"name":"Sickle","type":"weapon","img":"icons/weapons/swords/sickle-worn.webp","system":{"description":"A curved agricultural tool repurposed for combat.","cost":3,"damage":"1d4","hp":{"value":6,"max":6},"properties":"Light","weaponSkill":"swords","weight":3,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Staff","type":"weapon","img":"icons/weapons/staves/staff-simple.webp","system":{"description":"A simple wooden staff, useful for walking and combat.","cost":1,"damage":"1d4","hp":{"value":8,"max":8},"properties":"Light, Two-Handed","weaponSkill":"polearms","weight":4,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Improvised Weapon","type":"weapon","img":"icons/weapons/clubs/club-wooden.webp","system":{"description":"Any object pressed into service as a weapon.","cost":0,"damage":"1d3","hp":{"value":3,"max":3},"properties":"Light","weaponSkill":"axes","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Knife","type":"weapon","img":"icons/weapons/daggers/dagger-straight.webp","system":{"description":"A small utility blade that can be thrown.","cost":2,"damage":"1d3","hp":{"value":4,"max":4},"properties":"Quick, Thrown, Light","weaponSkill":"swords","weight":1,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Hatchet","type":"weapon","img":"icons/weapons/axes/axe-battle-worn.webp","system":{"description":"A small axe that can be thrown effectively.","cost":6,"damage":"1d4","hp":{"value":8,"max":8},"properties":"Quick, Thrown, Light","weaponSkill":"axes","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Dagger","type":"weapon","img":"icons/weapons/daggers/dagger-curved.webp","system":{"description":"A versatile blade for both stabbing and slashing.","cost":5,"damage":"1d4","hp":{"value":5,"max":5},"properties":"Quick, Thrown, Light","weaponSkill":"swords","weight":1,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Club","type":"weapon","img":"icons/weapons/clubs/club-simple.webp","system":{"description":"A simple bludgeoning weapon.","cost":2,"damage":"1d4","hp":{"value":8,"max":8},"properties":"Light","weaponSkill":"axes","weight":3,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Shortsword","type":"weapon","img":"icons/weapons/swords/sword-short.webp","system":{"description":"A well-balanced one-handed blade.","cost":15,"damage":"1d6","hp":{"value":10,"max":10},"properties":"Quick, Light","weaponSkill":"swords","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Rapier","type":"weapon","img":"icons/weapons/swords/rapier-jeweled.webp","system":{"description":"A slender thrusting sword favoring finesse over strength.","cost":25,"damage":"1d6","hp":{"value":12,"max":12},"properties":"Finesse, Light","weaponSkill":"swords","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Handaxe","type":"weapon","img":"icons/weapons/axes/handaxe-iron.webp","system":{"description":"A sturdy one-handed axe that can be thrown.","cost":10,"damage":"1d6","hp":{"value":10,"max":10},"properties":"Quick, Thrown, Light","weaponSkill":"axes","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Spear","type":"weapon","img":"icons/weapons/polearms/spear-simple.webp","system":{"description":"A versatile weapon with reach that can be thrown.","cost":10,"damage":"1d6","hp":{"value":12,"max":12},"properties":"Thrown, Reach, Light","weaponSkill":"polearms","weight":3,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Longsword","type":"weapon","img":"icons/weapons/swords/sword-longsword-steel.webp","system":{"description":"A well-balanced sword that can be wielded with one or two hands.","cost":25,"damage":"1d8","hp":{"value":15,"max":15},"properties":"Versatile","weaponSkill":"swords","weight":3,"equipped":false,"versatile":true,"versatileDamage":"1d10","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Battleaxe","type":"weapon","img":"icons/weapons/axes/axe-battle-heavy.webp","system":{"description":"A heavy axe designed for warfare.","cost":25,"damage":"1d8","hp":{"value":15,"max":15},"properties":"Versatile","weaponSkill":"axes","weight":4,"equipped":false,"versatile":true,"versatileDamage":"1d10","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Warhammer","type":"weapon","img":"icons/weapons/hammers/hammer-war-spiked.webp","system":{"description":"A heavy hammer built for crushing armor.","cost":30,"damage":"1d8","hp":{"value":18,"max":18},"properties":"Versatile","weaponSkill":"axes","weight":5,"equipped":false,"versatile":true,"versatileDamage":"1d10","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Polearm","type":"weapon","img":"icons/weapons/polearms/halberd-simple.webp","system":{"description":"A heavy polearm requiring significant strength to wield.","cost":40,"damage":"1d10","hp":{"value":15,"max":15},"properties":"Heavy, Reach, Two-Handed","weaponSkill":"polearms","weight":6,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Greatsword","type":"weapon","img":"icons/weapons/swords/greatsword-crossguard.webp","system":{"description":"A massive two-handed sword for those with the strength to wield it.","cost":50,"damage":"2d6","hp":{"value":20,"max":20},"properties":"Heavy, Two-Handed","weaponSkill":"swords","weight":6,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Greataxe","type":"weapon","img":"icons/weapons/axes/axe-great-steel.webp","system":{"description":"A tremendous axe capable of devastating blows.","cost":50,"damage":"1d12","hp":{"value":20,"max":20},"properties":"Heavy, Two-Handed","weaponSkill":"axes","weight":7,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Shortbow","type":"weapon","img":"icons/weapons/bows/bow-short-simple.webp","system":{"description":"A compact bow suitable for most users.","cost":25,"damage":"1d6","hp":{"value":8,"max":8},"properties":"Range (20/60), Two-Handed","weaponSkill":"bows","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Longbow","type":"weapon","img":"icons/weapons/bows/bow-long-simple.webp","system":{"description":"A powerful bow with extended range.","cost":50,"damage":"1d8","hp":{"value":10,"max":10},"properties":"Range (30/120), Two-Handed","weaponSkill":"bows","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":true,"quantity":1,"hardness":0}},
+    {"name":"Sling","type":"weapon","img":"icons/weapons/thrown/sling-leather.webp","system":{"description":"A simple projectile weapon using stones.","cost":1,"damage":"1d4","hp":{"value":3,"max":3},"properties":"Range (6/24)","weaponSkill":"bows","weight":0,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":1,"hardness":0}},
+    {"name":"Quiver, Arrows","type":"weapon","img":"icons/weapons/ammunition/arrows-flight.webp","system":{"description":"A quiver containing 20 arrows for bows.","cost":5,"damage":"","hp":{"value":1,"max":1},"properties":"Ammunition","weaponSkill":"","weight":2,"equipped":false,"versatile":false,"versatileDamage":"","twoHanded":false,"quantity":20,"hardness":0}}
+  ],
+  
+  armor: [
+    {"name":"Padded","type":"armor","img":"icons/equipment/chest/shirt-simple.webp","system":{"description":"Simple padded cloth armor offering basic protection.","cost":10,"dr":1,"evasionPenalty":-1,"hp":{"value":10,"max":10},"weight":10,"equipped":false,"armorType":"light","quantity":1}},
+    {"name":"Leather","type":"armor","img":"icons/equipment/chest/leather-vest-simple.webp","system":{"description":"Boiled leather armor that's flexible yet protective.","cost":20,"dr":1,"evasionPenalty":-1,"hp":{"value":15,"max":15},"weight":15,"equipped":false,"armorType":"light","quantity":1}},
+    {"name":"Hide","type":"armor","img":"icons/equipment/chest/hide-armor-simple.webp","system":{"description":"Thick animal hide reinforced with studs.","cost":30,"dr":2,"evasionPenalty":-2,"hp":{"value":20,"max":20},"weight":20,"equipped":false,"armorType":"medium","quantity":1}},
+    {"name":"Chain Shirt","type":"armor","img":"icons/equipment/chest/chainmail-simple.webp","system":{"description":"A shirt of interlocked metal rings.","cost":60,"dr":2,"evasionPenalty":-2,"hp":{"value":25,"max":25},"weight":25,"equipped":false,"armorType":"medium","quantity":1}},
+    {"name":"Chain Mail","type":"armor","img":"icons/equipment/chest/chainmail-hauberk.webp","system":{"description":"A full suit of interlocked metal rings. The disadvantage affects Dodge/Evasion rolls.","cost":80,"dr":3,"evasionPenalty":-2,"hp":{"value":30,"max":30},"weight":40,"equipped":false,"armorType":"heavy","quantity":1}},
+    {"name":"Plate Armor","type":"armor","img":"icons/equipment/chest/breastplate-layered-steel.webp","system":{"description":"The finest protection available, crafted from steel plates. The disadvantage affects Dodge/Evasion rolls.","cost":120,"dr":4,"evasionPenalty":-2,"hp":{"value":40,"max":40},"weight":60,"equipped":false,"armorType":"heavy","quantity":1}}
+  ],
+  
+  shields: [
+    {"name":"Buckler","type":"shield","img":"icons/equipment/shield/buckler-wooden-boss.webp","system":{"description":"A small shield that doesn't require a hand to use effectively.","cost":10,"hardness":3,"hp":{"value":10,"max":10},"weight":5,"equipped":false,"quantity":1}},
+    {"name":"Round Shield","type":"shield","img":"icons/equipment/shield/round-wooden-boss.webp","system":{"description":"A medium-sized round shield offering good protection.","cost":20,"hardness":5,"hp":{"value":20,"max":20},"weight":10,"equipped":false,"quantity":1}},
+    {"name":"Kite Shield","type":"shield","img":"icons/equipment/shield/kite-steel-worn.webp","system":{"description":"A large, teardrop-shaped shield favored by cavalry.","cost":35,"hardness":6,"hp":{"value":25,"max":25},"weight":12,"equipped":false,"quantity":1}},
+    {"name":"Tower Shield","type":"shield","img":"icons/equipment/shield/tower-steel-boss.webp","system":{"description":"A massive shield providing maximum protection.","cost":50,"hardness":8,"hp":{"value":35,"max":35},"weight":15,"equipped":false,"quantity":1}}
+  ],
+  
+  gear: [
+    {"name":"Backpack","type":"gear","img":"icons/containers/bags/pack-leather-brown.webp","system":{"description":"A simple backpack that increases carrying capacity by 20lbs. Characters can only wear 1 backpack at a time.","cost":8,"weight":0,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Bedroll","type":"gear","img":"icons/sundries/misc/bedroll-leather-brown.webp","system":{"description":"A simple thick fur blanket. Allows sleeping without a bed without making a check.","cost":3,"weight":5,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Blanket","type":"gear","img":"icons/sundries/misc/blanket-simple.webp","system":{"description":"A warm blanket for comfort and warmth.","cost":2,"weight":1,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Candle","type":"gear","img":"icons/sundries/lights/candle-lit-yellow.webp","system":{"description":"Provides dim illumination for 6 meters. When the wielder takes an action, roll 1d4, on a 1 the candle goes out.","cost":1,"weight":1,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Chain (10 feet)","type":"gear","img":"icons/sundries/misc/chain-steel.webp","system":{"description":"Steel chain suitable for binding or climbing.","cost":15,"weight":10,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Crowbar","type":"gear","img":"icons/tools/hand/crowbar-steel.webp","system":{"description":"Gives advantage to breaking through locked doors or into chests.","cost":8,"weight":5,"quantity":1,"gearType":"tools"}},
+    {"name":"Flask or Tankard","type":"gear","img":"icons/containers/kitchenware/cup-simple.webp","system":{"description":"A simple drinking vessel.","cost":2,"weight":1,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Grappling Hook","type":"gear","img":"icons/tools/hand/grappling-hook.webp","system":{"description":"A simple steel hook with 20ft of rope.","cost":8,"weight":4,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Hammer","type":"gear","img":"icons/tools/hand/hammer-and-nail.webp","system":{"description":"A simple steel hammer for construction work.","cost":5,"weight":3,"quantity":1,"gearType":"tools"}},
+    {"name":"Lantern, Hooded","type":"gear","img":"icons/sundries/lights/lantern-iron-yellow.webp","system":{"description":"A steel storm lantern that illuminates bright 10 meters, dim 20 meters. Requires 1 Oil to use. Can be affixed to a belt.","cost":15,"weight":2,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Oil (flask)","type":"gear","img":"icons/containers/kitchenware/flask-oil-cork.webp","system":{"description":"A unit of lantern oil that burns for 6 hours.","cost":2,"weight":1,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Piton","type":"gear","img":"icons/tools/hand/spike-iron.webp","system":{"description":"A simple steel stake used for climbing walls.","cost":1,"weight":0.5,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Rations (1 day)","type":"gear","img":"icons/consumables/food/bread-loaf-brown-sliced.webp","system":{"description":"Provides 1 day's worth of nutrition.","cost":2,"weight":2,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Rope, Hempen (50 feet)","type":"gear","img":"icons/sundries/misc/rope-coiled.webp","system":{"description":"Sturdy hemp rope for climbing and binding.","cost":4,"weight":10,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Tent (two-person)","type":"gear","img":"icons/environment/settlement/tent-leather-brown.webp","system":{"description":"Allows two users to sleep without any penalties from the environment.","cost":10,"weight":20,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Torches (10)","type":"gear","img":"icons/sundries/lights/torch-lit-brown.webp","system":{"description":"Provides bright illumination 10 meters, dim illumination 20 meters.","cost":2,"weight":1,"quantity":10,"gearType":"adventuring"}},
+    {"name":"Waterskin","type":"gear","img":"icons/containers/bags/waterskin-leather-brown.webp","system":{"description":"A waterskin holds 5 days worth of water.","cost":2,"weight":4,"quantity":1,"gearType":"adventuring"}},
+    {"name":"Alchemist's Kit","type":"gear","img":"icons/tools/scribal/case-leather-tan.webp","system":{"description":"A kit of various tools and ingredients that allows the user to craft potions and poultices.","cost":50,"weight":8,"quantity":1,"gearType":"tools"}},
+    {"name":"Disguise Kit","type":"gear","img":"icons/tools/scribal/case-leather-tan.webp","system":{"description":"A kit of various fabrics and makeup that allows the user to disguise themselves.","cost":25,"weight":3,"quantity":1,"gearType":"tools"}},
+    {"name":"Healer's Kit","type":"gear","img":"icons/tools/scribal/case-leather-tan.webp","system":{"description":"A kit of various herbs and bandages. Allows the user to stabilize and attempt to heal wounds.","cost":10,"weight":3,"quantity":1,"gearType":"tools"}},
+    {"name":"Lockpick Kit","type":"gear","img":"icons/tools/scribal/case-leather-tan.webp","system":{"description":"A kit of multiple lockpicks and shims that allows the user to pick locks.","cost":25,"weight":1,"quantity":1,"gearType":"tools"}},
+    {"name":"Poisoner's Kit","type":"gear","img":"icons/tools/scribal/case-leather-tan.webp","system":{"description":"A kit of various herbs and plants. Allows the user to craft poisons.","cost":50,"weight":2,"quantity":1,"gearType":"tools"}}
+  ]
+};
+
+// Function to import all items to the Items directory
+async function importGodfallItems() {
+  console.log("Starting Godfall items import to Items directory...");
+  
+  let totalImported = 0;
+  let errors = 0;
+  
+  // Check if user wants to proceed
+  const proceed = await Dialog.confirm({
+    title: "Import Godfall Items",
+    content: `<p>This will import all Godfall weapons, armor, shields, and gear to your Items directory.</p>
+              <p>Do you want to proceed?</p>`,
+    defaultYes: true
+  });
+  
+  if (!proceed) {
+    console.log("Import cancelled by user");
+    return;
+  }
+  
+  // Create folders for organization
+  const folders = {
+    weapons: await Folder.create({name: "Godfall Weapons", type: "Item", parent: null}),
+    armor: await Folder.create({name: "Godfall Armor", type: "Item", parent: null}),
+    shields: await Folder.create({name: "Godfall Shields", type: "Item", parent: null}),
+    gear: await Folder.create({name: "Godfall Gear", type: "Item", parent: null})
+  };
+  
+  // Import each category
+  for (const [category, items] of Object.entries(godfallItems)) {
+    console.log(`Importing ${category}...`);
+    const folder = folders[category];
+    
+    for (const itemData of items) {
+      try {
+        // Add folder reference
+        itemData.folder = folder.id;
+        
+        // Create the item
+        const item = await Item.create(itemData);
+        console.log(`✓ Imported: ${item.name}`);
+        totalImported++;
+      } catch (error) {
+        console.error(`✗ Error importing ${itemData.name}:`, error);
+        errors++;
+      }
+    }
+  }
+  
+  // Final report
+  const message = `Import complete! 
+    Successfully imported: ${totalImported} items
+    Errors: ${errors}
+    
+    Items have been organized into folders in your Items directory.`;
+  
+  console.log(message);
+  ui.notifications.info(message, {permanent: true});
+}
+
+// Run the import
+importGodfallItems();

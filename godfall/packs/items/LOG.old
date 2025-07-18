@@ -1,0 +1,5 @@
+2025/07/15-22:24:53.765829 78eadb3ef6c0 Recovering log #119
+2025/07/15-22:24:53.765920 78eadb3ef6c0 Level-0 table #122: started
+2025/07/15-22:24:53.766725 78eadb3ef6c0 Level-0 table #122: 5211 bytes OK
+2025/07/15-22:24:53.768625 78eadb3ef6c0 Delete type=0 #119
+2025/07/15-22:24:53.768674 78eadb3ef6c0 Delete type=3 #117

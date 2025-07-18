@@ -1,0 +1,84 @@
+<!-- templates/item/item-weapon-sheet.html -->
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Weapon Name"/></h1>
+    </div>
+  </header>
+  
+  <div class="sheet-body">
+    <div class="item-details">
+      <div class="form-group">
+        <label>Weapon Skill Required</label>
+        <select name="system.weapon_type" data-dtype="String">
+          <option value="Swords" {{#if (eq system.weapon_type "Swords")}}selected{{/if}}>Swords</option>
+          <option value="Axes" {{#if (eq system.weapon_type "Axes")}}selected{{/if}}>Axes</option>
+          <option value="Bludgeons" {{#if (eq system.weapon_type "Bludgeons")}}selected{{/if}}>Bludgeons</option>
+          <option value="Polearms" {{#if (eq system.weapon_type "Polearms")}}selected{{/if}}>Polearms</option>
+          <option value="Bows" {{#if (eq system.weapon_type "Bows")}}selected{{/if}}>Bows</option>
+          <option value="Thrown" {{#if (eq system.weapon_type "Thrown")}}selected{{/if}}>Thrown</option>
+          <option value="Shields" {{#if (eq system.weapon_type "Shields")}}selected{{/if}}>Shields</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Primary Attribute</label>
+        <select name="system.attribute" data-dtype="String">
+          <option value="str" {{#if (eq system.attribute "str")}}selected{{/if}}>Strength</option>
+          <option value="dex" {{#if (eq system.attribute "dex")}}selected{{/if}}>Dexterity</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Damage</label>
+        <input type="text" name="system.damage" value="{{system.damage}}" placeholder="1d8 Slashing"/>
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.versatile" {{#if system.versatile}}checked{{/if}}/>
+          Versatile (Can be used one or two-handed)
+        </label>
+      </div>
+      
+      <div class="form-group versatile-damage-group" {{#unless system.versatile}}style="display: none;"{{/unless}}>
+        <label>Versatile Damage (Two-Handed)</label>
+        <input type="text" name="system.versatile_damage" value="{{system.versatile_damage}}" placeholder="1d10 Slashing"/>
+        <small><em>Damage when used with both hands</em></small>
+      </div>
+      
+      <div class="form-group">
+        <label>Properties</label>
+        <input type="text" name="system.properties" value="{{system.properties}}" placeholder="Quick, Light, Heavy, etc."/>
+      </div>
+      
+      <div class="form-group">
+        <label>HP</label>
+        <input type="text" name="system.hp" value="{{system.hp}}" data-dtype="Number"/>
+      </div>
+      
+      <div class="form-group">
+        <label>Cost (Coins)</label>
+        <input type="text" name="system.cost" value="{{system.cost}}" data-dtype="Number"/>
+      </div>
+      
+      <div class="form-group">
+        <label>Weight</label>
+        <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Number" step="0.1"/>
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="system.equipped" {{#if system.equipped}}checked{{/if}}/>
+          Equipped
+        </label>
+      </div>
+    </div>
+    
+    <div class="item-description">
+      <h3>Description</h3>
+      <textarea name="system.description" rows="10">{{system.description}}</textarea>
+    </div>
+  </div>
+</form>
