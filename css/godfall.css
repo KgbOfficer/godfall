@@ -1,0 +1,6 @@
+.godfall .gf-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:8px; }
+.godfall .gf-header { grid-column:1/3; display:flex; flex-direction:column; gap:6px; }
+.godfall .gf-row { display:grid; grid-template-columns:80px 80px 100px 1fr; gap:6px; }
+.godfall .gf-col { background: var(--color-bg); padding:8px; border-radius:6px; }
+.godfall .gf-attr { display:grid; grid-template-columns:60px 60px 30px; align-items:center; gap:6px; }
+.godfall .gf-der { margin-bottom:4px; }
