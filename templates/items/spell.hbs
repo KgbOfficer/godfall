@@ -1,0 +1,37 @@
+<div class="gf-item">
+  <label>Name</label>
+  <input name="name" value="{{document.name}}"/>
+
+  <label>Tradition</label>
+  <select name="system.tradition" value="{{system.tradition}}">
+    <option value="general" {{#if (eq system.tradition "general")}}selected{{/if}}>General</option>
+    <option value="arcane"  {{#if (eq system.tradition "arcane")}}selected{{/if}}>Arcane</option>
+    <option value="divine"  {{#if (eq system.tradition "divine")}}selected{{/if}}>Divine</option>
+    <option value="primal"  {{#if (eq system.tradition "primal")}}selected{{/if}}>Primal</option>
+    <option value="occult"  {{#if (eq system.tradition "occult")}}selected{{/if}}>Occult</option>
+  </select>
+
+  <label>WP Cost</label>
+  <input type="number" name="system.wpCost" value="{{system.wpCost}}"/>
+
+  <label>Attack Attribute</label>
+  <select name="system.attackAttr">
+    <option value="int" {{#if (eq system.attackAttr "int")}}selected{{/if}}>INT</option>
+    <option value="wis" {{#if (eq system.attackAttr "wis")}}selected{{/if}}>WIS</option>
+    <option value="cha" {{#if (eq system.attackAttr "cha")}}selected{{/if}}>CHA</option>
+  </select>
+
+  <label>Damage (optional)</label>
+  <input name="system.damage" value="{{system.damage}}" placeholder="e.g., 2d6 or 2d6+INT"/>
+
+  <label>Save (optional)</label>
+  <input name="system.save" value="{{system.save}}" placeholder="e.g., WIS vs DC 15 or DEX vs 10 + INT"/>
+
+  <label>Effects / Description</label>
+  <textarea name="system.text" rows="6" placeholder="Rules text, targets, area, duration…">{{system.text}}</textarea>
+
+  <div class="gf-actions" style="margin-top:8px; display:flex; gap:6px;">
+    <button type="button" data-action="gf-spell-attack">Roll Spell Attack</button>
+    <button type="button" data-action="gf-spell-save">Roll Target Save</button>
+  </div>
+</div>

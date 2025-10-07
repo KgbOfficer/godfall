@@ -1,0 +1,34 @@
+<div class="godfall">
+  <div class="gf-grid">
+    <div class="gf-header">
+      <h1>{{actor.name}}</h1>
+
+      <div>Level: <input type="number" name="system.level" value="{{sys.level}}"/></div>
+      <div>HP: <input type="number" name="system.derived.hp" value="{{sys.derived.hp}}"/></div>
+      <div>Max HP: <input type="number" name="system.derived.maxHP" value="{{sys.derived.maxHP}}"/></div>
+      <div>WP: <input type="number" name="system.derived.wp" value="{{sys.derived.wp}}"/></div>
+      <div>Max WP: <input type="number" name="system.derived.maxWP" value="{{sys.derived.maxWP}}"/></div>
+      <div>DV: <input type="number" name="system.derived.dv" value="{{sys.derived.dv}}"/></div>
+      <div>Initiative: <input type="number" name="system.derived.initiative" value="{{sys.derived.initiative}}"/></div>
+    </div>
+
+    <hr/>
+
+    <h3>Attributes</h3>
+    <div>
+      STR: <input type="number" name="system.attributes.str" value="{{sys.attributes.str}}"/>
+      DEX: <input type="number" name="system.attributes.dex" value="{{sys.attributes.dex}}"/>
+      CON: <input type="number" name="system.attributes.con" value="{{sys.attributes.con}}"/>
+      INT: <input type="number" name="system.attributes.int" value="{{sys.attributes.int}}"/>
+      WIS: <input type="number" name="system.attributes.wis" value="{{sys.attributes.wis}}"/>
+      CHA: <input type="number" name="system.attributes.cha" value="{{sys.attributes.cha}}"/>
+    </div>
+
+    <hr/>
+
+    <div class="gf-actions">
+      <button type="button" data-action="roll-check">Roll Check</button>
+      <button type="button" data-action="roll-attack">Roll Attack</button>
+    </div>
+  </div>
+</div>

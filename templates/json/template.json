@@ -1,0 +1,50 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "level": 1,
+        "archetype": "",
+        "attributes": { "str": 10, "dex": 10, "con": 10, "int": 10, "wis": 10, "cha": 10 },
+        "backgrounds": [],
+        "derived": {
+          "maxHP": 10,
+          "hp": 10,
+          "maxWP": 5,
+          "wp": 5,
+          "dv": 10,
+          "evasion": 0,
+          "initiative": 0,
+          "dr": 0,
+          "shield": { "hardness": 0, "hp": 0 }
+        }
+      }
+    },
+    "character": { "templates": ["base"] },
+    "npc": { "templates": ["base"] }
+  },
+
+  "Item": {
+    "types": ["weapon", "armor", "shield", "gear", "talent", "background", "spell", "spiritAbility"],
+
+    "weapon": { "damage": "1d6", "skill": 0, "properties": [] },
+    "armor": { "dr": 0, "penalties": "", "hp": 10 },
+    "shield": { "hardness": 0, "hp": 10, "weight": 0 },
+    "gear": { "quantity": 1, "weight": 0, "text": "" },
+
+    "spell": {
+      "tradition": "general",
+      "wpCost": 1,
+      "attackAttr": "int",
+      "damage": "",
+      "save": "",
+      "text": ""
+    },
+
+    "spiritAbility": { "rank": 1, "wpCost": 1, "effect": "" },
+
+    "talent": { "text": "" },
+
+    "background": { "name": "", "rank": 1, "text": "" }
+  }
+}

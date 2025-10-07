@@ -1,0 +1,54 @@
+<section class="gf-grid">
+  <header class="gf-header">
+    <h2>{{actor.name}}</h2>
+    <div class="gf-row">
+      <label>Level</label><input type="number" name="system.level" value="{{sys.level}}"/>
+      <label>Archetype</label><input name="system.archetype" value="{{sys.archetype}}" placeholder="warrior/rogue/spellcaster/spirit"/>
+    </div>
+  </header>
+
+  <div class="gf-col">
+    <h3>Attributes</h3>
+    {{#each sys.attributes as |val key|}}
+      <div class="gf-attr">
+        <label>{{upper key}}</label>
+        <input type="number" name="system.attributes.{{key}}" value="{{val}}"/>
+        <span class="mod">{{lookup ../sys.mods key}}</span>
+      </div>
+    {{/each}}
+
+    <h3>Derived</h3>
+    <div class="gf-der"><b>HP</b> {{sys.derived.hp}} / {{sys.derived.maxHP}}</div>
+    <div class="gf-der"><b>WP</b> {{sys.derived.wp}} / {{sys.derived.maxWP}}</div>
+    <div class="gf-der"><b>DV</b> {{sys.derived.dv}}</div>
+    <div class="gf-der"><b>Evasion</b> {{sys.derived.evasion}}</div>
+    <div class="gf-der"><b>Initiative</b> {{sys.derived.initiative}}</div>
+    <div class="gf-der"><b>Armor DR</b> {{sys.derived.dr}} | <b>Shield</b> H{{sys.derived.shield.hardness}}
+  </div>
+
+  <div class="gf-col">
+    <h3>Inventory</h3>
+    <ol class="items-list">
+      {{#each actor.items as |it|}}
+        <li class="item" data-item-id="{{it.id}}">
+          <span>{{it.name}}</span>
+        </li>
+      {{/each}}
+    </ol>
+
+    <div class="gf-actions">
+      <button type="button" data-action="roll-attack">Attack</button>
+      <button type="button" data-action="roll-check">Check</button>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+document.currentScript.closest("section").addEventListener("click", async ev => {
+  const root = ev.currentTarget;
+  const app = ui.windows[root.closest(".app").dataset.appid];
+  const actor = app.object;
+  if (ev.target.dataset.action === "roll-check") actor.rollCheck({label:"NPC Check", attr:"dex"});
+  if (ev.target.dataset.action === "roll-attack") actor.rollAttack({label:"NPC Attack", attr:"str", damage:"1d6"});
+});
+</script>
