@@ -1,0 +1,36 @@
+{
+  "id": "godfall",
+  "title": "Godfall RPG",
+  "description": "Foundry VTT system for Godfall RPG (v13.346).",
+  "version": "0.1.2",
+  "compatibility": { "minimum": "13", "verified": "13.346" },
+
+  "authors": [{ "name": "Charles Bentley & ChatGPT", "url": "" }],
+
+  "esmodules": ["scripts/main.js"],
+  "styles": ["css/godfall.css"],
+
+  "languages": [
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+
+  "template": "templates/json/template.json",
+
+  "documentTypes": {
+    "Actor": ["character", "npc"],
+    "Item": ["weapon", "armor", "shield", "gear", "talent", "background", "spell", "spiritAbility"]
+  },
+
+  "packs": [
+    { "label": "Weapons", "name": "weapons", "path": "packs/weapons.db", "type": "Item" },
+    { "label": "Armor", "name": "armor", "path": "packs/armor.db", "type": "Item" },
+    { "label": "Shields", "name": "shields", "path": "packs/shields.db", "type": "Item" },
+    { "label": "Talents", "name": "talents", "path": "packs/talents.db", "type": "Item" },
+    { "label": "Spells", "name": "spells", "path": "packs/spells.db", "type": "Item" },
+    { "label": "Spirit Abilities", "name": "spirits", "path": "packs/spirits.db", "type": "Item" }
+  ],
+
+  "url": "",
+  "license": "",
+  "socket": false
+}
